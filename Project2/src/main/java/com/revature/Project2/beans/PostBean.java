@@ -5,90 +5,99 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "POST")
 public class PostBean implements Serializable {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "P_ID")
-	private int p_id;
-	
+	private int pID;
+
 	@Column(name = "P_LIKES")
-	private List<User> p_likes;
-	
+	private List<User> pLikes;
+
 	@Column(name = "P_CONTENT")
-	private String p_content;
-	
+	private String pContent;
+
 	@Column(name = "P_YTUBE")
-	private String p_ytube;
-	
+	private String pYTube;
+
 	@Column(name = "IMAGEURL")
-	private String p_imageURL;
-	
+	private String pImageURL;
+
 	@Column(name = "P_AUTHORID")
 	@ManyToOne
 	@JoinColumn(name = "U_ID")
-	private int p_authorId;	
-	
-	
+	private int pAuthorId;
+
 	public PostBean() {
 		super();
 	}
-	
-	public PostBean(List<User> p_likes, String p_content, String p_ytube, String p_imageURL,
-			int p_authorId) {
+
+	public PostBean(int pID, List<User> pLikes, String pContent, String pYTube, String pImageURL, int pAuthorId) {
 		super();
-		this.p_likes = p_likes;
-		this.p_content = p_content;
-		this.p_ytube = p_ytube;
-		this.p_imageURL = p_imageURL;
-		this.p_authorId = p_authorId;
+		this.pID = pID;
+		this.pLikes = pLikes;
+		this.pContent = pContent;
+		this.pYTube = pYTube;
+		this.pImageURL = pImageURL;
+		this.pAuthorId = pAuthorId;
 	}
 
-	public int getP_id() {
-		return p_id;
+	public int getpID() {
+		return pID;
 	}
-	public void setP_id(int p_id) {
-		this.p_id = p_id;
+
+	public void setpID(int pID) {
+		this.pID = pID;
 	}
-	public List<User> getP_likes() {
-		return p_likes;
+
+	public List<User> getpLikes() {
+		return pLikes;
 	}
-	public void setP_likes(List<User> p_likes) {
-		this.p_likes = p_likes;
+
+	public void setpLikes(List<User> pLikes) {
+		this.pLikes = pLikes;
 	}
-	public String getP_content() {
-		return p_content;
+
+	public String getpContent() {
+		return pContent;
 	}
-	public void setP_content(String p_content) {
-		this.p_content = p_content;
+
+	public void setpContent(String pContent) {
+		this.pContent = pContent;
 	}
-	public String getP_ytube() {
-		return p_ytube;
+
+	public String getpYTube() {
+		return pYTube;
 	}
-	public void setP_ytube(String p_ytube) {
-		this.p_ytube = p_ytube;
+
+	public void setpYTube(String pYTube) {
+		this.pYTube = pYTube;
 	}
-	public String getP_imageURL() {
-		return p_imageURL;
+
+	public String getpImageURL() {
+		return pImageURL;
 	}
-	public void setP_imageURL(String p_imageURL) {
-		this.p_imageURL = p_imageURL;
+
+	public void setpImageURL(String pImageURL) {
+		this.pImageURL = pImageURL;
 	}
-	public int getP_authorId() {
-		return p_authorId;
+
+	public int getpAuthorId() {
+		return pAuthorId;
 	}
-	public void setP_authorId(int p_authorId) {
-		this.p_authorId = p_authorId;
+
+	public void setpAuthorId(int pAuthorId) {
+		this.pAuthorId = pAuthorId;
 	}
 
 	@Override
 	public String toString() {
-		return "PostBean [p_id=" + p_id + ", p_likes=" + p_likes + ", p_content=" + p_content + ", p_ytube=" + p_ytube
-				+ ", p_imageURL=" + p_imageURL + ", p_authorId=" + p_authorId + "]";
+		return "PostBean [pID=" + pID + ", pLikes=" + pLikes + ", pContent=" + pContent + ", pYTube=" + pYTube
+				+ ", pImageURL=" + pImageURL + ", pAuthorId=" + pAuthorId + "]";
 	}
-	
-	
-	
+
 }

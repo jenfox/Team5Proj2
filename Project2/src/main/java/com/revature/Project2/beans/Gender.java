@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table (name = "GENDER")
 public class Gender implements Serializable {
@@ -11,7 +12,7 @@ public class Gender implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name = "G_ID")
-	private int g_id; // gender ID
+	private int gID; // gender ID
 	
 	@Column(name = "GENDER")
 	private String gender;
@@ -25,12 +26,12 @@ public class Gender implements Serializable {
 		this.gender = gender;
 	}
 
-	public int getG_id() {
-		return g_id;
+	public int getGID() {
+		return gID;
 	}
 
-	public void setG_id(int g_id) {
-		this.g_id = g_id;
+	public void setGID(int gID) {
+		this.gID = gID;
 	}
 
 	public String getGender() {
@@ -43,7 +44,7 @@ public class Gender implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Gender [g_id=" + g_id + ", gender=" + gender + "]";
+		return "Gender [gID=" + gID + ", gender=" + gender + "]";
 	}
 
 }

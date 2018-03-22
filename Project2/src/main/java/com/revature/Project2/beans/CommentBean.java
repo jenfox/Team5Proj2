@@ -4,81 +4,97 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+/**
+ * 
+ * @author johne Vang
+ * @author Matthew Butler
+ *
+ */
+
 @Entity
 @Table(name = "COMMENT")
 public class CommentBean implements Serializable {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "C_ID")
-	private int c_id;
-	
+	private int cID;
+
 	@Column(name = "C_AUTHORID")
 	@ManyToOne
-	@JoinColumn (name = "U_ID")
-	private int c_authorId;
-	
+	@JoinColumn(name = "U_ID")
+	private int cAuthorID;
+
 	@Column(name = "C_RECEIVERID")
 	@ManyToOne
-	@JoinColumn (name = "C_ID")
-	private int c_recieverId;
-	
-	@Column (name = "C_POSTID")
+	@JoinColumn(name = "C_ID")
+	private int cRecieverID;
+
+	@Column(name = "C_POSTID")
 	@ManyToOne
-	@JoinColumn (name = "P_ID")
-	private int c_postId;
-	
+	@JoinColumn(name = "P_ID")
+	private int cPostID;
+
 	@Column(name = "C_CONTENT")
-	private String c_content;
-	
+	private String content;
+
 	public CommentBean() {
 		super();
 	}
-	
-	public CommentBean(int c_id, int c_authorId, int c_recieverId, int c_postId, String c_content) {
+
+	public CommentBean(int cID, int cAuthorID, int cRecieverID, int cPostID, String content) {
 		super();
-		this.c_id = c_id;
-		this.c_authorId = c_authorId;
-		this.c_recieverId = c_recieverId;
-		this.c_postId = c_postId;
-		this.c_content = c_content;
+		this.cID = cID;
+		this.cAuthorID = cAuthorID;
+		this.cRecieverID = cRecieverID;
+		this.cPostID = cPostID;
+		this.content = content;
 	}
 
-	public int getC_id() {
-		return c_id;
+	public int getcID() {
+		return cID;
 	}
-	public void setC_id(int c_id) {
-		this.c_id = c_id;
+
+	public void setcID(int cID) {
+		this.cID = cID;
 	}
-	public int getC_authorId() {
-		return c_authorId;
+
+	public int getcAuthorID() {
+		return cAuthorID;
 	}
-	public void setC_authorId(int c_authorId) {
-		this.c_authorId = c_authorId;
+
+	public void setcAuthorID(int cAuthorID) {
+		this.cAuthorID = cAuthorID;
 	}
-	public int getC_recieverId() {
-		return c_recieverId;
+
+	public int getcRecieverID() {
+		return cRecieverID;
 	}
-	public void setC_recieverId(int c_recieverId) {
-		this.c_recieverId = c_recieverId;
+
+	public void setcRecieverID(int cRecieverID) {
+		this.cRecieverID = cRecieverID;
 	}
-	public int getC_postId() {
-		return c_postId;
+
+	public int getcPostID() {
+		return cPostID;
 	}
-	public void setC_postId(int c_postId) {
-		this.c_postId = c_postId;
+
+	public void setcPostID(int cPostID) {
+		this.cPostID = cPostID;
 	}
-	public String getC_content() {
-		return c_content;
+
+	public String getContent() {
+		return content;
 	}
-	public void setC_content(String c_content) {
-		this.c_content = c_content;
+
+	public void setContent(String content) {
+		this.content = content;
 	}
+
 	@Override
 	public String toString() {
-		return "CommentBean [c_id=" + c_id + ", c_authorId=" + c_authorId + ", c_recieverId=" + c_recieverId
-				+ ", c_postId=" + c_postId + ", c_content=" + c_content + "]";
+		return "CommentBean [cID=" + cID + ", cAuthorID=" + cAuthorID + ", cRecieverID=" + cRecieverID + ", cPostID="
+				+ cPostID + ", content=" + content + "]";
 	}
-	
-	
+
 }
