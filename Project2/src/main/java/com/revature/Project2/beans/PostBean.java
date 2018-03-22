@@ -5,6 +5,13 @@ import java.util.List;
 
 import javax.persistence.*;
 
+/**
+ * 
+ * @author johne Vang
+ * @author Matthew Butler
+ *
+ */
+
 @Entity
 @Table(name = "POST")
 public class PostBean implements Serializable {

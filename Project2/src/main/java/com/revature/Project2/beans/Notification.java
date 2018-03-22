@@ -4,6 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+/**
+ * 
+ * @author johne Vang
+ * @author Matthew Butler
+ *
+ */
+
 @Entity
 @Table(name = "NOTIFICATION")
 public class Notification implements Serializable {
@@ -12,6 +19,11 @@ public class Notification implements Serializable {
 	@GeneratedValue
 	@Column(name = "N_ID")
 	private int n_id;
+	
+	@Column(name = "USER_ID")
+	@ManyToOne
+	@JoinColumn(name="U_ID")
+	private int user_id;
 	
 	@Column(name = "N_CONTENT")
 	private String n_content;

@@ -4,6 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+/**
+ * 
+ * @author johne Vang
+ * @author Matthew Butler
+ *
+ */
+
 @Entity
 @Table(name = "COMMENT")
 public class CommentBean implements Serializable {

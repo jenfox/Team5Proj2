@@ -4,6 +4,13 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.*;
 
+/**
+ * 
+ * @author johne Vang
+ * @author Matthew Butler
+ *
+ */
+
 @Entity
 @Table(name="USER")
 public class User implements Serializable {

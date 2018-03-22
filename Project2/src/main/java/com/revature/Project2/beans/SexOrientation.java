@@ -4,6 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+/**
+ * 
+ * @author johne Vang
+ * @author Matthew Butler
+ *
+ */
+
 @Entity
 @Table (name = "SEXORIENTATION")
 public class SexOrientation implements Serializable {
