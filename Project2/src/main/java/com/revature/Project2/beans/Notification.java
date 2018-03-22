@@ -4,71 +4,75 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
-/**
- * 
- * @author johne Vang
- * @author Matthew Butler
- *
- */
 
 @Entity
 @Table(name = "NOTIFICATION")
 public class Notification implements Serializable {
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "N_ID")
-	private int n_id;
-	
+	private int notificationID;
+
 	@Column(name = "USER_ID")
 	@ManyToOne
-	@JoinColumn(name="U_ID")
-	private int user_id;
-	
+	@JoinColumn(name = "U_ID")
+	private int nUserID;
+
 	@Column(name = "N_CONTENT")
-	private String n_content;
-	
+	private String nContent;
+
 	@Column(name = "N_ROUTEURL")
-	private String n_routeURL;
-	
+	private String nRouteURL;
+
 	public Notification() {
 		super();
 	}
 
-	public Notification(String n_content, String n_routeURL) {
+	public Notification(int notificationID, int nUserID, String nContent, String nRouteURL) {
 		super();
-		this.n_content = n_content;
-		this.n_routeURL = n_routeURL;
+		this.notificationID = notificationID;
+		this.nUserID = nUserID;
+		this.nContent = nContent;
+		this.nRouteURL = nRouteURL;
 	}
 
-	public int getN_id() {
-		return n_id;
+	public int getNotificationID() {
+		return notificationID;
 	}
 
-	public void setN_id(int n_id) {
-		this.n_id = n_id;
+	public void setNotificationID(int notificationID) {
+		this.notificationID = notificationID;
 	}
 
-	public String getN_content() {
-		return n_content;
+	public int getnUserID() {
+		return nUserID;
 	}
 
-	public void setN_content(String n_content) {
-		this.n_content = n_content;
+	public void setnUserID(int nUserID) {
+		this.nUserID = nUserID;
 	}
 
-	public String getn_routeURL() {
-		return n_routeURL;
+	public String getnContent() {
+		return nContent;
 	}
 
-	public void setn_routeURL(String n_routeURL) {
-		this.n_routeURL = n_routeURL;
+	public void setnContent(String nContent) {
+		this.nContent = nContent;
+	}
+
+	public String getnRouteURL() {
+		return nRouteURL;
+	}
+
+	public void setnRouteURL(String nRouteURL) {
+		this.nRouteURL = nRouteURL;
 	}
 
 	@Override
 	public String toString() {
-		return "Notification [n_id=" + n_id + ", n_content=" + n_content + ", n_routeURL=" + n_routeURL + "]";
+		return "Notification [notificationID=" + notificationID + ", nUserID=" + nUserID + ", nContent=" + nContent
+				+ ", nRouteURL=" + nRouteURL + "]";
 	}
-	
-	
+
 }

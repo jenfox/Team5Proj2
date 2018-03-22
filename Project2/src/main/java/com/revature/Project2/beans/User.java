@@ -4,156 +4,148 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.*;
 
-/**
- * 
- * @author johne Vang
- * @author Matthew Butler
- *
- */
-
 @Entity
-@Table(name="USER")
+@Table(name = "USER")
 public class User implements Serializable {
-	
-	@Id 
+
+	@Id
 	@GeneratedValue
-	@Column(name="U_ID")
-	private int u_id;
-	
+	@Column(name = "U_ID")
+	private int uID;
+
 	@Column(name = "U_EMAIL", unique = true)
-	private String u_email;		//unique
-	
+	private String uEmail; // unique
+
 	@Column(name = "U_PASSWORD")
-	private String u_password;
+	private String uPassword;
 
 	@Column(name = "U_FIRSTNAME")
-	private String u_firstName;
-	
+	private String uFirstName;
+
 	@Column(name = "U_LASTNAME")
-	private String u_lastName;
-	
+	private String uLastName;
+
 	@Column(name = "U_GENDERID")
-	@JoinColumn ( name = "G_ID")
-	private Gender u_genderID;
-	
+	@JoinColumn(name = "G_ID")
+	private Gender uGenderID;
+
 	@Column(name = "U_SEXORIENTID")
-	@JoinColumn( name = "SEXORIENT_ID")
-	private SexOrientation u_sexOrientID;
+	@JoinColumn(name = "SEXORIENT_ID")
+	private SexOrientation uSexOrientID;
 
 	@Column(name = "U_PHONENUMBER")
-	private String u_phoneNumber;
-	
+	private String uPhoneNumber;
+
 	@Column(name = "U_DATEOFBIRTH")
-	private Date u_dateOfBirth;
-	
+	private Date uDOB; // date of birth
+
 	@Column(name = "IMAGEURL")
-	private String imageURL;
+	private String uProfilePic;
 
 	public User() {
 		super();
 	}
 
-	public User(String u_email, String u_password, String u_firstName, String u_lastName,
-			Gender u_genderID, SexOrientation u_sexOrientID, String u_phoneNumber, Date u_dateOfBirth,
-			String imageURL) {
+	public User(int uID, String uEmail, String uPassword, String uFirstName, String uLastName, Gender uGenderID,
+			SexOrientation uSexOrientID, String uPhoneNumber, Date uDOB, String uProfilePic) {
 		super();
-		this.u_email = u_email;
-		this.u_password = u_password;
-		this.u_firstName = u_firstName;
-		this.u_lastName = u_lastName;
-		this.u_genderID = u_genderID;
-		this.u_sexOrientID = u_sexOrientID;
-		this.u_phoneNumber = u_phoneNumber;
-		this.u_dateOfBirth = u_dateOfBirth;
-		this.imageURL = imageURL;
+		this.uID = uID;
+		this.uEmail = uEmail;
+		this.uPassword = uPassword;
+		this.uFirstName = uFirstName;
+		this.uLastName = uLastName;
+		this.uGenderID = uGenderID;
+		this.uSexOrientID = uSexOrientID;
+		this.uPhoneNumber = uPhoneNumber;
+		this.uDOB = uDOB;
+		this.uProfilePic = uProfilePic;
 	}
 
-	public int getU_id() {
-		return u_id;
+	public int getuID() {
+		return uID;
 	}
 
-	public void setU_id(int u_id) {
-		this.u_id = u_id;
+	public void setuID(int uID) {
+		this.uID = uID;
 	}
 
-	public String getU_email() {
-		return u_email;
+	public String getuEmail() {
+		return uEmail;
 	}
 
-	public void setU_email(String u_email) {
-		this.u_email = u_email;
+	public void setuEmail(String uEmail) {
+		this.uEmail = uEmail;
 	}
 
-	public String getU_password() {
-		return u_password;
+	public String getuPassword() {
+		return uPassword;
 	}
 
-	public void setU_password(String u_password) {
-		this.u_password = u_password;
+	public void setuPassword(String uPassword) {
+		this.uPassword = uPassword;
 	}
 
-	public String getU_firstName() {
-		return u_firstName;
+	public String getuFirstName() {
+		return uFirstName;
 	}
 
-	public void setU_firstName(String u_firstName) {
-		this.u_firstName = u_firstName;
+	public void setuFirstName(String uFirstName) {
+		this.uFirstName = uFirstName;
 	}
 
-	public String getU_lastName() {
-		return u_lastName;
+	public String getuLastName() {
+		return uLastName;
 	}
 
-	public void setU_lastName(String u_lastName) {
-		this.u_lastName = u_lastName;
+	public void setuLastName(String uLastName) {
+		this.uLastName = uLastName;
 	}
 
-	public Gender getU_genderID() {
-		return u_genderID;
+	public Gender getuGenderID() {
+		return uGenderID;
 	}
 
-	public void setU_genderID(Gender u_genderID) {
-		this.u_genderID = u_genderID;
+	public void setuGenderID(Gender uGenderID) {
+		this.uGenderID = uGenderID;
 	}
 
-	public SexOrientation getU_sexOrientID() {
-		return u_sexOrientID;
+	public SexOrientation getuSexOrientID() {
+		return uSexOrientID;
 	}
 
-	public void setU_sexOrientID(SexOrientation u_sexOrientID) {
-		this.u_sexOrientID = u_sexOrientID;
+	public void setuSexOrientID(SexOrientation uSexOrientID) {
+		this.uSexOrientID = uSexOrientID;
 	}
 
-	public String getU_phoneNumber() {
-		return u_phoneNumber;
+	public String getuPhoneNumber() {
+		return uPhoneNumber;
 	}
 
-	public void setU_phoneNumber(String u_phoneNumber) {
-		this.u_phoneNumber = u_phoneNumber;
+	public void setuPhoneNumber(String uPhoneNumber) {
+		this.uPhoneNumber = uPhoneNumber;
 	}
 
-	public Date getU_dateOfBirth() {
-		return u_dateOfBirth;
+	public Date getuDOB() {
+		return uDOB;
 	}
 
-	public void setU_dateOfBirth(Date u_dateOfBirth) {
-		this.u_dateOfBirth = u_dateOfBirth;
+	public void setuDOB(Date uDOB) {
+		this.uDOB = uDOB;
 	}
 
-	public String getImageURL() {
-		return imageURL;
+	public String getuProfilePic() {
+		return uProfilePic;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+	public void setuProfilePic(String uProfilePic) {
+		this.uProfilePic = uProfilePic;
 	}
 
 	@Override
 	public String toString() {
-		return "User [u_id=" + u_id + ", u_email=" + u_email + ", u_password=" + u_password + ", u_firstName="
-				+ u_firstName + ", u_lastName=" + u_lastName + ", u_genderID=" + u_genderID + ", u_sexOrientID="
-				+ u_sexOrientID + ", u_phoneNumber=" + u_phoneNumber + ", u_dateOfBirth=" + u_dateOfBirth
-				+ ", imageURL=" + imageURL + "]";
+		return "User [uID=" + uID + ", uEmail=" + uEmail + ", uPassword=" + uPassword + ", uFirstName=" + uFirstName
+				+ ", uLastName=" + uLastName + ", uGenderID=" + uGenderID + ", uSexOrientID=" + uSexOrientID
+				+ ", uPhoneNumber=" + uPhoneNumber + ", uDOB=" + uDOB + ", uProfilePic=" + uProfilePic + "]";
 	}
 
 }
